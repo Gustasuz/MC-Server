@@ -1,0 +1,16 @@
+import subprocess
+import time
+
+prompt = "> "
+user_input = input(prompt)
+
+if user_input == "open":
+    file_path = r'C:\Users\PC\Desktop\1.20.4\run.bat'
+    try:
+        subprocess.run(['start', '', file_path], check=True, shell=True)
+        print("Opening!")
+    except subprocess.CalledProcessError as e:
+        print(f"Error: {e}")
+    time.sleep(1)
+else:
+    print("Command not found")
